@@ -39,7 +39,7 @@ public class AndroidBaseTest extends AppiumUtils {
         options.setAutomationName("UiAutomator2");
         options.setApp(System.getProperty("user.dir")+"//src//test//java//org//ultimaHoraHackathon//resources//Elevate-1.0.apk");
         driver = new AndroidDriver(service.getUrl(), options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         formPage= new HomePage(driver);
     }
 
