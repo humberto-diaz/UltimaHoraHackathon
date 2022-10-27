@@ -18,6 +18,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
 
     BrowseDocsPage browseDocsPage;
     TISPage tisPage;
+    InsulationPage insulationPage;
     @Test
     public void firstPage() throws InterruptedException {
 
@@ -28,6 +29,8 @@ public class DocumentValidationTests extends AndroidBaseTest {
         changeSettingsPage = new ChangeSettingsPage(driver);
         browseDocsPage = new BrowseDocsPage(driver);
         tisPage = new TISPage(driver);
+        insulationPage = new InsulationPage(driver);
+
 
         homePage.clickOnNextButton();
         regionPage.clickOnAmericasOption();
@@ -41,6 +44,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),false);
         browseDocsPage.clickOnTechnicalInformationSheetsCategory();
         tisPage.clickOnInsolationOption();
+        insulationPage.clickOnPolyisoBoardOption();
 
         sleep(3);
     }
