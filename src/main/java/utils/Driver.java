@@ -5,8 +5,8 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.annotations.Before;
 import org.testng.annotations.AfterSuite;
 
 public class Driver {
@@ -14,7 +14,7 @@ public class Driver {
     public static AppiumDriver<MobileElement> driver;
 
 
-    @Before
+    @BeforeTest
     public void setup(){
 
         try {
@@ -38,12 +38,10 @@ public class Driver {
         }
 
     }
-
     @Test
     public void sampleTest(){
         System.out.println("Just checking...");
     }
-
 
    @AfterSuite
     public void teardown(){
