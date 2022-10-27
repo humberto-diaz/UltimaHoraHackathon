@@ -2,6 +2,7 @@ package org.ultimaHoraHackathon.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.ultimaHoraHackathon.pageObjects.android.BrowseDocsPage;
 import org.ultimaHoraHackathon.pageObjects.android.HomePage;
 import org.ultimaHoraHackathon.pageObjects.android.RegionPage;
 import org.ultimaHoraHackathon.pageObjects.android.TellUsPage;
@@ -17,6 +18,8 @@ public class DocumentValidationTests extends AndroidBaseTest {
     TellUsPage tellUsPage;
     LocationAccessPage locationAccessPage;
     ChangeSettingsPage changeSettingsPage;
+
+    BrowseDocsPage browseDocsPage;
     @Test
     public void firstPage() throws InterruptedException {
 
@@ -25,6 +28,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         tellUsPage = new TellUsPage(driver);
         locationAccessPage = new LocationAccessPage(driver);
         changeSettingsPage = new ChangeSettingsPage(driver);
+        browseDocsPage = new BrowseDocsPage(driver);
 
         homePage.clickOnNextButton();
         regionPage.clickOnAmericasOption();
@@ -36,7 +40,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),true);
         changeSettingsPage.swapChangeSettingsModal();
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),false);
+        browseDocsPage.clickOnTechnicalInformationSheetsCategory();
         sleep(3);
-
     }
 }
