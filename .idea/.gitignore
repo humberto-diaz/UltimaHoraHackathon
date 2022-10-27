@@ -2,4 +2,4 @@
 /shelf/
 /workspace.xml
 .idea
-/data.properties
+src/main/java/org/ultimaHoraHackathon/resources/data.properties
