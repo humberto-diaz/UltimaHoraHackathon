@@ -40,7 +40,7 @@ public class AndroidBaseTest extends AppiumUtils {
         options.setApp(System.getProperty("user.dir")+"//src//test//java//org//ultimaHoraHackathon//resources//Elevate-1.0.apk");
 
         driver = new AndroidDriver(service.getUrl(), options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         formPage= new HomePage(driver);
     }
 
