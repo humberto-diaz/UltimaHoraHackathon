@@ -19,6 +19,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
     BrowseDocsPage browseDocsPage;
     TISPage tisPage;
     InsulationPage insulationPage;
+    PolyisoBoardPage polyisoBoardPage;
     @Test
     public void firstPage() throws InterruptedException {
 
@@ -30,6 +31,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         browseDocsPage = new BrowseDocsPage(driver);
         tisPage = new TISPage(driver);
         insulationPage = new InsulationPage(driver);
+        polyisoBoardPage = new PolyisoBoardPage(driver);
 
 
         homePage.clickOnNextButton();
@@ -45,7 +47,8 @@ public class DocumentValidationTests extends AndroidBaseTest {
         browseDocsPage.clickOnTechnicalInformationSheetsCategory();
         tisPage.clickOnInsolationOption();
         insulationPage.clickOnPolyisoBoardOption();
+        polyisoBoardPage.clickOnTis901aDoc();
 
-        sleep(3);
+        sleep(5);
     }
 }
