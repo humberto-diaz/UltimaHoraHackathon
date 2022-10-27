@@ -1,8 +1,11 @@
 package org.ultimaHoraHackathon.utils;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 
 public class AndroidActions extends AppiumUtils{
@@ -23,6 +26,18 @@ public class AndroidActions extends AppiumUtils{
     public void clickOnButton(WebElement element)
     {
         element.click();
+    }
+
+    public void swipeAction(WebElement ele,String direction, Float percent)
+    {
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement)ele).getId(),
+
+                "direction", direction,
+                "percent", percent
+        ));
+
+
     }
 
 
