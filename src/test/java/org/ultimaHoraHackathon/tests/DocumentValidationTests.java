@@ -50,7 +50,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         tisPage.clickOnInsolationOption();
         insulationPage.clickOnPolyisoBoardOption();
         polyisoBoardPage.clickOnTis901aDoc();
-        //polyisoBoardPage.pageScreenshot();
+        polyisoBoardPage.pageScreenshot();
 
         sleep(5);
     }
