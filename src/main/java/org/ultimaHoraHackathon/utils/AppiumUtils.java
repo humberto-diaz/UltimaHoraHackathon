@@ -31,7 +31,6 @@ public class AppiumUtils {
     public void waitForElementToAppear(WebElement ele, AppiumDriver driver, String atrribute, String value)
     {
         WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.attributeContains((ele),"text" , "Cart"));
     }
 
 }
