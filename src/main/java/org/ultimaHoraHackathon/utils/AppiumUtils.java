@@ -30,8 +30,7 @@ public class AppiumUtils {
 
     public void waitForElementToAppear(WebElement ele, AppiumDriver driver, String atrribute, String value)
     {
-        WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.domAttributeToBe((ele),atrribute , value));
+        WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(10));
     }
 
 }

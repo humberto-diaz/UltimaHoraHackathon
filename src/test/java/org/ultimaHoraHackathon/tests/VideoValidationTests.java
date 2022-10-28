@@ -19,13 +19,14 @@ public class VideoValidationTests extends AndroidBaseTest {
     TellUsPage tellUsPage;
     LocationAccessPage locationAccessPage;
     ChangeSettingsPage changeSettingsPage;
-
     BrowseDocsPage browseDocsPage;
     TISPage tisPage;
     InsulationPage insulationPage;
     PolyisoBoardPage polyisoBoardPage;
-
     MoreMenuPage moreMenuPage;
+    MediaCenterPage mediaCenterPage;
+
+    AccessoriesVideosPage accessoriesVideosPage;
 
     @Test
     public void VideoValidationTests() throws InterruptedException {
@@ -40,6 +41,8 @@ public class VideoValidationTests extends AndroidBaseTest {
         insulationPage = new InsulationPage(driver);
         polyisoBoardPage = new PolyisoBoardPage(driver);
         moreMenuPage = new MoreMenuPage(driver);
+        mediaCenterPage = new MediaCenterPage(driver);
+        accessoriesVideosPage = new AccessoriesVideosPage(driver);
 
         homePage.clickOnNextButton();
         regionPage.clickOnAmericasOption();
@@ -51,14 +54,10 @@ public class VideoValidationTests extends AndroidBaseTest {
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),true);
         changeSettingsPage.swapChangeSettingsModal();
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),false);
-        //browseDocsPage.clickOnMoreMenu();
-        //moreMenuPage.clickOnMediaCenterOption();
-
-
-
-
-
-
-
+        browseDocsPage.clickOnMoreMenu();
+        moreMenuPage.clickOnMediaCenterOption();
+        mediaCenterPage.clickOnAccessoriesVideosOption();
+        accessoriesVideosPage.clickOnFirstVideo();
+        accessoriesVideosPage.clickOnPlayIcon();
     }
 }
