@@ -32,7 +32,7 @@ public class BrowseDocsPage extends AndroidActions {
         clickOnButton(technicalInformationSheetsCategory);
     }
 
-    public void clickOnMoreMenu(){
+    /*public void clickOnMoreMenu(){
         driver.switchTo().frame(frame);
 
 
@@ -43,6 +43,6 @@ public class BrowseDocsPage extends AndroidActions {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
 }

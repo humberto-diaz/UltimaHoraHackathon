@@ -27,7 +27,6 @@ public class MoreMenuPage extends AndroidActions {
     @AndroidFindBy(accessibility="Media Center")
     private WebElement mediaCenter;
 
-
     public void clickOnMediaCenterOption(){ clickOnButton(mediaCenter);
     }
 }

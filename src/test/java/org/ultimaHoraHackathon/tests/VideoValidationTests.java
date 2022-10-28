@@ -51,7 +51,7 @@ public class VideoValidationTests extends AndroidBaseTest {
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),true);
         changeSettingsPage.swapChangeSettingsModal();
         Assert.assertEquals(changeSettingsPage.getFocusableAttribute(),false);
-        browseDocsPage.clickOnMoreMenu();
+        //browseDocsPage.clickOnMoreMenu();
         //moreMenuPage.clickOnMediaCenterOption();
 
 
