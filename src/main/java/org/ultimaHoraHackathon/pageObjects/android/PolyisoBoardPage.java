@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.ultimaHoraHackathon.utils.AndroidActions;
 
+import java.io.IOException;
+
 public class PolyisoBoardPage extends AndroidActions {
 
     AndroidDriver driver;
@@ -21,7 +23,14 @@ public class PolyisoBoardPage extends AndroidActions {
     private WebElement tis901AIso95GlDoc;
 
     public void clickOnTis901aDoc(){
+
         clickOnButton(tis901AIso95GlDoc);
+    }
+
+    public void pageScreenshot() throws IOException {
+
+        waitForElementToAppear(tis901AIso95GlDoc, driver, "displayed", "true");
+        getScreenshotPath("test",driver, "//pageScreenshots");
     }
 
 }
