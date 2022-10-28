@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.JavascriptExecutor;
@@ -63,8 +65,27 @@ public class AndroidActions extends AppiumUtils{
         fop.write(decodedBytes);
         fop.flush();
         fop.close();
-        //FileUtils.copyFile(source, new File("image.png"));
-        //1. capture and place in folder //2. extent report pick file and attach to report
+    }
+
+    public void readImageOcr() throws TesseractException {
+
+        Tesseract tesseract = new Tesseract();
+        try {
+
+            tesseract.setDatapath("//tessdata");
+
+            // the path of your tess data folder
+            // inside the extracted file
+            String text
+                    = tesseract.doOCR(new File("//pageScreenshots/FirstPage"));
+
+            // path of your image file
+            System.out.print("text----------------------   " + text);
+        }
+        catch (TesseractException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

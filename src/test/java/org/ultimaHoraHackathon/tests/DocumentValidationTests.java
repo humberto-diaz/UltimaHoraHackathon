@@ -1,5 +1,6 @@
 package org.ultimaHoraHackathon.tests;
 
+import net.sourceforge.tess4j.TesseractException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.ultimaHoraHackathon.pageObjects.android.*;
@@ -23,7 +24,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
     InsulationPage insulationPage;
     PolyisoBoardPage polyisoBoardPage;
     @Test
-    public void firstPage() throws InterruptedException, IOException {
+    public void firstPage() throws InterruptedException, IOException, TesseractException {
 
         regionPage = new RegionPage(driver);
         homePage = new HomePage(driver);
@@ -51,7 +52,8 @@ public class DocumentValidationTests extends AndroidBaseTest {
         insulationPage.clickOnPolyisoBoardOption();
         polyisoBoardPage.clickOnTis901aDoc();
         polyisoBoardPage.pageScreenshot();
-
         sleep(5);
+        polyisoBoardPage.readImageOcr();
+
     }
 }
