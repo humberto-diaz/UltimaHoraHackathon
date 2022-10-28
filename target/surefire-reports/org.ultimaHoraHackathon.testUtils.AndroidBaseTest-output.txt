@@ -1,1 +1,1 @@
-Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@64b8f8f4
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@68fb2c38
