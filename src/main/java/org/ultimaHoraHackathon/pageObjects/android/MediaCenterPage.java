@@ -7,11 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.ultimaHoraHackathon.utils.AndroidActions;
 
-public class MoreMenuPage extends AndroidActions {
-
+public class MediaCenterPage extends AndroidActions {
     AndroidDriver driver;
-
-    public MoreMenuPage(AndroidDriver driver){
+    public MediaCenterPage(AndroidDriver driver){
 
         super(driver);
         this.driver = driver;
@@ -19,9 +17,9 @@ public class MoreMenuPage extends AndroidActions {
     }
 
     //Locators
-    @AndroidFindBy(accessibility="Media Center")
-    private WebElement mediaCenter;
+    @AndroidFindBy(xpath = "//*[contains(@content-desc,'ACCESSORIES')]")
+    private WebElement accessoriesVideos;
 
-    public void clickOnMediaCenterOption(){ clickOnButton(mediaCenter);
-    }
+    public void clickOnAccessoriesVideosOption(){ clickOnButton(accessoriesVideos); }
+
 }
