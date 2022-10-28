@@ -22,9 +22,27 @@ public class BrowseDocsPage extends AndroidActions {
     @AndroidFindBy(accessibility="Technical Information Sheets")
     private WebElement technicalInformationSheetsCategory;
 
+    @AndroidFindBy(accessibility="MORE Tab 3 of 3")
+    private WebElement moreMenu;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]")
+    private WebElement frame;
 
     public void clickOnTechnicalInformationSheetsCategory(){
         clickOnButton(technicalInformationSheetsCategory);
     }
+
+    /*public void clickOnMoreMenu(){
+        driver.switchTo().frame(frame);
+
+
+        clickOnButton(moreMenu);
+
+        try {
+            driver.wait();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 
 }
