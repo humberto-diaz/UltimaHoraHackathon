@@ -7,6 +7,8 @@ import org.ultimaHoraHackathon.pageObjects.android.browserPages.ChangeSettingsPa
 import org.ultimaHoraHackathon.pageObjects.android.nativePages.LocationAccessPage;
 import org.ultimaHoraHackathon.testUtils.AndroidBaseTest;
 
+import java.io.IOException;
+
 import static java.lang.Thread.sleep;
 
 public class DocumentValidationTests extends AndroidBaseTest {
@@ -21,7 +23,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
     InsulationPage insulationPage;
     PolyisoBoardPage polyisoBoardPage;
     @Test
-    public void firstPage() throws InterruptedException {
+    public void firstPage() throws InterruptedException, IOException {
 
         regionPage = new RegionPage(driver);
         homePage = new HomePage(driver);
@@ -48,6 +50,7 @@ public class DocumentValidationTests extends AndroidBaseTest {
         tisPage.clickOnInsolationOption();
         insulationPage.clickOnPolyisoBoardOption();
         polyisoBoardPage.clickOnTis901aDoc();
+        polyisoBoardPage.pageScreenshot();
 
         sleep(5);
     }
